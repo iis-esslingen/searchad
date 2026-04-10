@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <!-- Primary Meta Tags -->
+  <!-- TODO: Replace with your paper title and author names -->
+  <meta name="title" content="SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving">
+  <!-- TODO: Write a compelling 150-160 character description of your research -->
+  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Add 5-10 relevant keywords for your research area -->
+  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <!-- TODO: List all authors -->
+  <meta name="author" content="Felix Embacher, Jonas Uhrig, Marius Cordts, Markus Enzweiler">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <!-- TODO: Replace with your institution or lab name -->
+  <meta property="og:site_name" content="Mercedes-Benz AG, Institute for Intelligent Systems, Esslingen University of Applied Sciences">
+  <!-- TODO: Same as paper title above -->
+  <meta property="og:title" content="SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving">
+  <!-- TODO: Same as description above -->
+  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Replace with your actual website URL -->
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
+  <!-- TODO: Create a 1200x630px preview image and update path -->
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
+  <meta property="article:author" content="FIRST_AUTHOR_NAME">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="KEYWORD1">
+  <meta property="article:tag" content="KEYWORD2">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- TODO: Replace with your lab/institution Twitter handle -->
+  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
+  <!-- TODO: Replace with first author's Twitter handle -->
+  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
+  <!-- TODO: Same as paper title above -->
+  <meta name="twitter:title" content="SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving">
+  <!-- TODO: Same as description above -->
+  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <!-- TODO: Same as social preview image above -->
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+  <meta name="twitter:image:alt" content="SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving - Research Preview">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving">
+  <meta name="citation_author" content="Embacher, Felix">
+  <meta name="citation_author" content="Uhrig, Jonas">
+  <meta name="citation_author" content="Cordts, Marius">
+  <meta name="citation_author" content="Enzweiler, Markus">
+  <meta name="citation_publication_date" content="2024">
+  <meta name="citation_conference_title" content="CONFERENCE_NAME">
+  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://ajax.googleapis.com">
+  <link rel="preconnect" href="https://documentcloud.adobe.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+
+  <!-- document title -->
+  <title>SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving</title>
+  
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/project_icon.ico">
+  <link rel="apple-touch-icon" href="static/images/project_icon.ico">
+  
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+  
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+  
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/bulma-carousel.min.js"></script>
+  <script defer src="static/js/bulma-slider.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+  
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving",
+    "description": "BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "Felix Embacher",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Mercedes-Benz AG"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Jonas Uhrig",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Mercedes-Benz AG"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Marius Cordts",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Mercedes-Benz AG"
+        }
+      },
+      {
+        "@type": "Person",
+        "name": "Markus Enzweiler",
+        "affiliation": {
+          "@type": "Organization",
+          "name": "Institute for Intelligent Systems, Esslingen University of Applied Sciences"
+        }
+      }
+    ],
+    "datePublished": "2024-01-01",
+    "publisher": {
+      "@type": "Organization",
+      "name": "CVPR Findings 2026"
+    },
+    "url": "https://dmholtz.github.io/bevad/",
+    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+    "keywords": ["KEYWORD1", "KEYWORD2", "KEYWORD3", "machine learning", "computer vision"],
+    "abstract": "FULL_ABSTRACT_TEXT_HERE",
+    "citation": "BIBTEX_CITATION_HERE",
+    "isAccessibleForFree": true,
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "mainEntity": {
+      "@type": "WebPage",
+      "@id": "https://dmholtz.github.io/bevad/"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "RESEARCH_AREA_1"
+      },
+      {
+        "@type": "Thing", 
+        "name": "RESEARCH_AREA_2"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- More Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
+      <i class="fas fa-flask"></i>
+      More Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>More Works from Our Lab</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <!-- Neural Rendering for Sensor Adaptation in 3D Object Detection -->
+        <a href="https://dmholtz.github.io/camshift/" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Neural Rendering for Sensor Adaptation in 3D Object Detection</h5>
+            <!-- <p>Add short description here</p> -->
+            <span class="work-venue">IEEE Intelligent Vehicles Symposium (IV) 2025</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+<main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://scholar.google.de/citations?hl=en&user=lAkrYR0AAAAJ&hl" target="_blank">Felix Embacher</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.de/citations?hl=en&user=PmLbO_wAAAAJ&hl" target="_blank">Jonas Uhrig</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=RM0ik8wAAAAJ" target="_blank">Marius Cordts</a><sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://scholar.google.de/citations?hl=en&user=vNZhd_8AAAAJ&hl" target="_blank">Markus Enzweiler</a><sup>2</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Mercedes-Benz AG, <sup>2</sup>Institute for Intelligent Systems, Esslingen University of Applied Sciences<br>CVPR 2026</span>
+            </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2604.08008" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- TODO: Add your supplementary material PDF or remove this section
+                    <span class="link-block">
+                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span>
+                -->
+
+                  <span class="link-block">
+                    <a href="https://github.com/iis-esslingen/searchad_devkit" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- Hugging Face Dataset Link -->
+                <span class="link-block">
+                  <a href="https://huggingface.co/datasets/iis-esslingen/SearchAD" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-database"></i> <!-- Using a database icon for dataset -->
+                  </span>
+                  <span>SearchAD Dataset</span>
+                </a>
+              </span>
+
+              <!-- SearchAD Benchmark Link -->
+              <span class="link-block">
+                <a href="https://huggingface.co/spaces/SearchADBenchmark/SearchADLargeScaleRareImageRetrievalDatasetforAutonomousDriving" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-chart-line"></i> <!-- Using a chart-line icon for benchmark -->
+                </span>
+                <span>SearchAD Benchmark</span>
+              </a>
+            </span>
+
+                <!-- TODO: Update with your arXiv paper ID -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2604.08008" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="columns is-centered">
+    <div class="column is-four-fifths">
+      <div class="column is-full">
+        <div class="item">
+          <!-- Replace with your SVG file path -->
+          <img src="static/images/searchad_collage.svg" alt="Description of your SVG image" loading="lazy"/>
+          <!-- Replace with description of this result -->
+        </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+                    <!-- TODO: Replace with your paper abstract -->
+          <p>
+            Retrieving rare and safety-critical driving scenarios from large-scale datasets is essential for building robust autonomous driving (AD) systems. As dataset sizes continue to grow, the key challenge shifts from collecting more data to efficiently identifying the most relevant samples.
+            <br> <!-- Added two <br> tags for a double line break, like a new paragraph without <p> -->
+            We introduce SearchAD, a large-scale rare image retrieval dataset for AD containing over 423k frames drawn from 11 established datasets. SearchAD provides high-quality manual annotations of more than 513k bounding boxes covering 90 rare categories. It specifically targets the “needle-in-a-haystack” problem of locating extremely rare classes, with some appearing fewer than 50 times across the entire dataset. Unlike existing benchmarks, which focused on instance-level retrieval, SearchAD emphasizes semantic image retrieval with a well-defined data split, enabling text-to-image and image-to-image retrieval, few-shot learning, and fine-tuning of multi-modal retrieval models.
+            <br> <!-- Another example of where you might add a break -->
+            Comprehensive evaluations show that text-based methods outperform image-based ones due to stronger inherent semantic grounding. While models directly aligning spatial visual features with language achieve the best zero-shot results, and our fine-tuning baseline significantly improves performance, absolute retrieval capabilities remain unsatisfactory. With a held-out test set on a public benchmark server, SearchAD establishes the first large-scale dataset for retrieval-driven data curation and long-tail perception research in AD.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <img src="static/images/searchad_class_overview.svg" alt="Overview of SearchAD classes grouped by category" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+          Overview of SearchAD classes grouped by category.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/rarity_comparison.jpg" alt="Distribution comparison showing the extreme rarity of SearchAD classes" loading="lazy"/>
+        <h2 class="subtitle has-text-centered"> 
+          Distribution comparison showing the extreme rarity of SearchAD classes.
+        </h2>
+      </div>
+      <div class="item">
+        <img src="static/images/object_sizes.jpg" alt="Object size distribution for each SearchAD category" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Object size distribution for each SearchAD category.
+       </h2>
+     </div>
+      <div class="item">
+        <img src="static/images/supportset_example_wide.jpg" alt="Language and Vision Support Set for the Search Query 'Human - With Sticks or Crutches'" loading="lazy"/>
+        <h2 class="subtitle has-text-centered">
+         Language and vision support set for the search query "Human - With Sticks or Crutches".
+       </h2>
+     </div>
+     </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+<!-- SearchAD Dataset Section -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3 has-text-centered">SearchAD Dataset: The Foundation for Rare Image Retrieval</h2>
+        <div class="content has-text-justified">
+          <p>
+            The SearchAD dataset is a large-scale autonomous driving dataset, specifically targeting rare and safety-critical objects and scenes. It's designed to provide a comprehensive and challenging environment for semantic image retrieval research. The dataset is available at <a href="https://huggingface.co/datasets/iis-esslingen/SearchAD" target="_blank" style="color: blue;">https://huggingface.co/datasets/iis-esslingen/SearchAD</a>.
+          </p>
+
+          <h3 class="title is-4">Dataset Overview</h3>
+          <ul>
+            <li>
+              <h4 class="title is-5"><strong>Name:</strong> SearchAD</h4>
+            </li>
+              <h4 class="title is-5"><strong>Dataset Size:</strong> <strong>423,798 frames (images)</strong>.</h4>
+            </li>
+            <li>
+              <h4 class="title is-5"><strong>Origin:</strong> Uniquely compiled by integrating data from <strong>11 established AD datasets</strong>, ensuring diversity and real-world variability.</h4>
+            </li>
+          </ul>
+            <div class="table-container">
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+                <thead>
+                  <tr>
+                    <th>Dataset [Download Link]</th>
+                    <th class="has-text-centered">#Frames</th>
+                    <th class="has-text-centered">#Rare Classes</th>
+                    <th class="has-text-centered">#Objects</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://wwwlehre.dhbw-stuttgart.de/~sgehrig/lostAndFoundDataset/index.html#:~:text=leftImg8bit.zip%20(6GB)%20left%208%2Dbit%20images%20%2D%20train%20and%20test%20set%20(2104%20images)" target="_blank">Lost and Found [1]</a></td>
+                    <td class="has-text-centered">2,239</td>
+                    <td class="has-text-centered">18</td>
+                    <td class="has-text-centered">2,098</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.wilddash.cc/accounts/login?next=/download" target="_blank">WildDash2 [2]</a></td>
+                    <td class="has-text-centered">5,068</td>
+                    <td class="has-text-centered">80</td>
+                    <td class="has-text-centered">5,032</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://acdc.vision.ee.ethz.ch/download#:~:text=rgb_anon_trainvaltest.zip" target="_blank">ACDC [3]</a></td>
+                    <td class="has-text-centered">8,012</td>
+                    <td class="has-text-centered">60</td>
+                    <td class="has-text-centered">7,471</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://idd.insaan.iiit.ac.in/accounts/login/?next=/dataset/download/" target="_blank">IDD Segmentation [4]</a></td>
+                    <td class="has-text-centered">10,003</td>
+                    <td class="has-text-centered">52</td>
+                    <td class="has-text-centered">12,192</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d#:~:text=Download%20left%20color%20images%20of%20object%20data%20set%20(12%20GB)" target="_blank">KITTI [5]</a></td>
+                    <td class="has-text-centered">14,999</td>
+                    <td class="has-text-centered">47</td>
+                    <td class="has-text-centered">9,840</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.cityscapes-dataset.com/downloads/" target="_blank">Cityscapes [6]</a></td>
+                    <td class="has-text-centered">24,998</td>
+                    <td class="has-text-centered">75</td>
+                    <td class="has-text-centered">31,037</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.mapillary.com/dataset/vistas" target="_blank">Mapillary Vistas [7]</a></td>
+                    <td class="has-text-centered">25,000</td>
+                    <td class="has-text-centered">86</td>
+                    <td class="has-text-centered">35,093</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://eurocity-dataset.tudelft.nl/eval/downloads/detection" target="_blank">ECP [8]</a></td>
+                    <td class="has-text-centered">47,335</td>
+                    <td class="has-text-centered">76</td>
+                    <td class="has-text-centered">33,081</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.nuscenes.org/nuscenes#download" target="_blank">nuScenes [9]</a></td>
+                    <td class="has-text-centered">80,314</td>
+                    <td class="has-text-centered">56</td>
+                    <td class="has-text-centered">166,152</td>
+                  </tr>
+                  <tr>
+                    <td><a href="http://bdd-data.berkeley.edu/download.html" target="_blank">BDD100K [10]</a></td>
+                    <td class="has-text-centered">100,000</td>
+                    <td class="has-text-centered">80</td>
+                    <td class="has-text-centered">83,102</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.mapillary.com/dataset/trafficsign" target="_blank">Mapillary Sign [11]</a></td>
+                    <td class="has-text-centered">105,830</td>
+                    <td class="has-text-centered">90</td>
+                    <td class="has-text-centered">128,167</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://huggingface.co/datasets/iis-esslingen/SearchAD" target="_blank">SearchAD [12]</a></td>
+                    <td class="has-text-centered">423,798</td>
+                    <td class="has-text-centered">90</td>
+                    <td class="has-text-centered">513,265</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ul>
+            <li style="margin-top: 1.5rem;"> <!-- Added margin-top here -->
+              <h4 class="title is-5"><strong>Annotations:</strong> Features more than <strong>513,265 high-quality manual bounding box annotations</strong>.</h4>
+            </li>
+            <li>
+              <h4 class="title is-5"><strong>Categories:</strong> The 90 rare classes are grouped into 9 broader categories:</h4>
+              <div style="margin-top: 0.75rem; display: flex; flex-wrap: wrap; gap: 0.25rem;">
+                <span class="tag is-light is-medium">Animal</span>
+                <span class="tag is-light is-medium">Human</span>
+                <span class="tag is-light is-medium">Marking</span>
+                <span class="tag is-light is-medium">Object</span>
+                <span class="tag is-light is-medium">Rideable</span>
+                <span class="tag is-light is-medium">Scene</span>
+                <span class="tag is-light is-medium">Sign</span>
+                <span class="tag is-light is-medium">Trailer</span>
+                <span class="tag is-light is-medium">Vehicle</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End SearchAD Dataset and Setup Section -->
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <div class="bibtex-header">
+        <h2 class="title">BibTeX</h2>
+        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+          <i class="fas fa-copy"></i>
+          <span class="copy-text">Copy</span>
+        </button>
+      </div>
+      <pre id="bibtex-code"><code>@article{embacher2026searchadlargescalerareimage,
+      title={SearchAD: Large-Scale Rare Image Retrieval Dataset for Autonomous Driving}, 
+      author={Felix Embacher and Jonas Uhrig and Marius Cordts and Markus Enzweiler},
+      year={2026},
+      eprint={2604.08008},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2604.08008}, 
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
